@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check list da coleta</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e0f7fa;
+            color: #0277bd;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        h1 {
+            color: #01579b;
+        }
+        h2 {
+            margin-top: 20px;
+            color: #0288d1;
+        }
+        .date {
+            font-size: 1rem;
+            color: #0288d1;
+            margin-bottom: 20px;
+        }
+        .session {
+            background-color: #b3e5fc;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 400px;
+        }
+        .session ul {
+            list-style: none;
+            padding: 0;
+        }
+        .session li {
+            margin: 5px 0;
+        }
+        .completed {
+            text-decoration: line-through;
+            color: #4caf50;
+        }
+        .button-container {
+            margin-top: 20px;
+        }
+        button {
+            background-color: #0288d1;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        button:hover {
+            background-color: #0277bd;
+        }
+        .warning {
+            color: #d32f2f;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Check list da coleta</h1>
+    <div class="date" id="current-date"></div>
+
+    <div class="session" id="session-prancheta">
+        <h2>Prancheta</h2>
+        <ul id="list-Prancheta">
+
+ <li><input type="checkbox" onclick="toggleCheckbox(this)">Ordem de Tráfego</li>
+ <li><input type="checkbox" onclick="toggleCheckbox(this)">Roteiro de Viagem</li>
+ <li><input type="checkbox" onclick="toggleCheckbox(this)">Formulário de Duplicatas</li>
+ <li><input type="checkbox" onclick="toggleCheckbox(this)">Cartão de Alimentação</li>
+ <li><input type="checkbox" onclick="toggleCheckbox(this)">Carteira de Motorista</li>
+ <li><input type="checkbox" onclick="toggleCheckbox(this)">Metodologias de Coleta, Cloro, pH e Temp.</li>
+ <li><input type="checkbox" onclick="toggleCheckbox(this)">Fichas de Coleta do Roteiro (FR04.0135)</li>
+
+        </ul>
+    </div>
+
+    <div class="session" id="session-carro">
+        <h2>Carro</h2>
+        <ul id="list-carro">
+<li><input type="checkbox" onclick="toggleCheckbox(this)">3 Cubetas</li>
+<li><input type="checkbox" onclick="toggleCheckbox(this)">Colorímetro + ( ) Pilha Reserva</li>
+<li><input type="checkbox" onclick="toggleCheckbox(this)">pHmetro: ______________</li>
+<li><input type="checkbox" onclick="toggleCheckbox(this)">Termômetro + ( ) Reserva</li>
+<li><input type="checkbox" onclick="toggleCheckbox(this)">Caixa Térmica</li>
+<li><input type="checkbox" onclick="toggleCheckbox(this)">Pisseta Água reagente (coletar no dia)</li>
+<li><input type="checkbox" onclick="toggleCheckbox(this)">Alicate Bomba D'Água</li>
+<li><input type="checkbox" onclick="toggleCheckbox(this)">Caneta para retroprojetor</li>
+<li><input type="checkbox" onclick="toggleCheckbox(this)">Prancheta e 2 canetas</li>
+<li><input type="checkbox" onclick="toggleCheckbox(this)">Papel toalha</li>
+<li><input type="checkbox" onclick="toggleCheckbox(this)">Capa de Chuva/Guarda-Chuva</li>
+<li><input type="checkbox" onclick="toggleCheckbox(this)">Bombinha de Álcool 70% ( )Álcool Reserva</li>
+<li><input type="checkbox" onclick="toggleCheckbox(this)">Tampão para DPD e Reagente DPD SUFICIENTES</li>
+<li><input type="checkbox" onclick="toggleCheckbox(this)">Chaves Universais ( )Captação</li>
+<li><input type="checkbox" onclick="toggleCheckbox(this)">Cartão de Combustível</li>
+<li><input type="checkbox" onclick="toggleCheckbox(this)">Combustível</li>
+<li><input type="checkbox" onclick="toggleCheckbox(this)">Encomendas Internas</li>
+<li><input type="checkbox" onclick="toggleCheckbox(this)">Encomendas Externas</li>
+<li><input type="checkbox" onclick="toggleCheckbox(this)">Água</li>
+<li><input type="checkbox" onclick="toggleCheckbox(this)">Proteção Solar</li>
+        </ul>
+    </div>
+
+<div class="session" id="session-caixas">
+        <h2>Caixas</h2>
+        <ul id="list-caixas">
+<li><input type="checkbox" onclick="toggleCheckbox(this)">Frascos de coleta Físico-Químico ( )Reserva</li>
+<li><input type="checkbox" onclick="toggleCheckbox(this)">Frascos Físico-Químico Grandes</li>
+<li><input type="checkbox" onclick="toggleCheckbox(this)">Frascos Físico-Químico Duplicata</li>
+<li><input type="checkbox" onclick="toggleCheckbox(this)">Frascos de coleta Bacteriológico ( )Reserva</li>
+<li><input type="checkbox" onclick="toggleCheckbox(this)">Branco de Coleta ( )2 Frascos</li>
+<li><input type="checkbox" onclick="toggleCheckbox(this)">Frasco de Temperatura</li>
+<li><input type="checkbox" onclick="toggleCheckbox(this)">Frascos de Bac. Duplicata</li>
+<li><input type="checkbox" onclick="toggleCheckbox(this)">Gelo</li>
+        </ul>
+    </div>
+
+<div class="session" id="session-coletaespecial">
+        <h2>Coleta Especial</h2>
+        <ul id="list-coletaespecial">
+<li><input type="checkbox" onclick="toggleCheckbox(this)">Hidrologia, Metais e Cromatologia</li>
+<li><input type="checkbox" onclick="toggleCheckbox(this)">Frascos Hidrobiologia</li>
+<li><input type="checkbox" onclick="toggleCheckbox(this)">Frascos Metais</li>
+<li><input type="checkbox" onclick="toggleCheckbox(this)">Frascos Orgânicos</li>
+<li><input type="checkbox" onclick="toggleCheckbox(this)">Frascos Agrotóxicos</li>
+<li><input type="checkbox" onclick="toggleCheckbox(this)">Lugol</li>
+<li><input type="checkbox" onclick="toggleCheckbox(this)">Perneira</li>
+<li><input type="checkbox" onclick="toggleCheckbox(this)">Balde</li>
+<li><input type="checkbox" onclick="toggleCheckbox(this)">Fichas de Coletas Específicas</li>
+<li><input type="checkbox" onclick="toggleCheckbox(this)">Chaves das Captações</li>
+        </ul>
+    </div>
+
+<div class="session" id="session-rotina">
+        <h2>Rotina de Chegada</h2>
+        <ul id="list-rotina">
+<li><input type="checkbox" onclick="toggleCheckbox(this)">Roteiro e Ordem de Tráfego Preenchidas</li>
+<li><input type="checkbox" onclick="toggleCheckbox(this)">Luzes, farol, som desligados e vidros abaixados/li>
+<li><input type="checkbox" onclick="toggleCheckbox(this)">Lixos, Frascos Vazios, Malotes</li>
+<li><input type="checkbox" onclick="toggleCheckbox(this)">Recebimento de Amostras</li>
+        </ul>
+    </div>
+
+    <div class="button-container">
+        <button onclick="clearAll()">Limpar</button>
+        <button onclick="checkCompletion()">Concluir</button>
+    </div>
+
+    <script>
+        // Exibir a data atual
+        document.getElementById("current-date").textContent = new Date().toLocaleDateString("pt-BR");
+
+        function toggleCheckbox(checkbox) {
+            const list = checkbox.closest("ul");
+            const item = checkbox.parentElement;
+
+            if (checkbox.checked) {
+                item.classList.add("completed");
+                list.appendChild(item);
+            } else {
+                item.classList.remove("completed");
+                list.insertBefore(item, list.querySelector(".completed"));
+            }
+        }
+
+        function clearAll() {
+            document.querySelectorAll("input[type='checkbox']").forEach(checkbox => {
+                checkbox.checked = false;
+                checkbox.parentElement.classList.remove("completed");
+            });
+        }
+
+        function checkCompletion() {
+            const checkboxes = document.querySelectorAll("input[type='checkbox']");
+            const allChecked = Array.from(checkboxes).every(checkbox => checkbox.checked);
+            const warning = document.querySelector(".warning");
+
+            if (warning) warning.remove();
+            
+            if (!allChecked) {
+                const warningMessage = document.createElement("div");
+                warningMessage.textContent = "Por favor, marque todas as caixas para concluir.";
+                warningMessage.classList.add("warning");
+                document.body.appendChild(warningMessage);
+            } else {
+                alert("Todas as tarefas foram concluídas!");
+            }
+        }
+    </script>
+</body>
+</html>
